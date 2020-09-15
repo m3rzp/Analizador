@@ -18,7 +18,7 @@ int main()
 	bool accepted = false;
 
 	regex flotante("^[0-9]+((\\.[0-9]+)|(\\.[0-9]+[E](\\+|\\-|[0-9]+)[0-9]+)|([E](\\+|\\-|[0-9]+)[0-9]+))$");
-	regex variables("^[a-z]+\\d*$");
+	regex variables("^[a-z]+\\d*[a-z]*$");
 	regex reservadas("^(auto|break|case|char|const|continue|default|do|double|else|enum|extern|float|for|goto|if|int|long|register|return|short|signed|sizeof|static|struct|switch|typedef|union|unsigned|void|volatile|while)$");
 	regex operadores("^(\\+|\\-|%|\\*|\\/|=)$");
 	regex especiales("^(\\{|\\}|\\[|\\]|&&|\\|\\||\\;|\\,|\\.|\"\"|\" |\'|\'\'|<|>|<<|>>|\\^|<=|>=|==|\\||&)$");
@@ -38,10 +38,10 @@ int main()
 				{
 					cout << "La cadena ingresada es un flotante" << endl; break;
 				}
-			case 2: accepted = regex_match(str, variables);
+			case 2: accepted = regex_match(str, especiales);
 				if (accepted == true)
 				{
-					cout << "La cadena ingresada es una variable" << endl; break;
+					cout << "La cadena ingresada es un caracter especial" << endl; break;
 				}
 			case 3: accepted = regex_match(str, reservadas);
 				if (accepted == true)
@@ -53,10 +53,10 @@ int main()
 				{
 					cout << "La cadena ingresada es un operador" << endl; break;
 				}
-			case 5: accepted = regex_match(str, especiales);
+			case 5: accepted = regex_match(str, variables);
 				if (accepted == true)
 				{
-					cout << "La cadena ingresada es un caracter especial" << endl; break;
+					cout << "La cadena ingresada es una variable" << endl; break;
 				}
 			case 6: accepted = regex_match(str, enteros);
 				if (accepted == true)
