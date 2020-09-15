@@ -20,8 +20,8 @@ int main()
 	regex flotante("^[0-9]+((\\.[0-9]+)|(\\.[0-9]+[E](\\+|\\-|[0-9]+)[0-9]+)|([E](\\+|\\-|[0-9]+)[0-9]+))$");
 	regex variables("^[a-z]+\\d*[a-z]*$");
 	regex reservadas("^(auto|break|case|char|const|continue|default|do|double|else|enum|extern|float|for|goto|if|int|long|register|return|short|signed|sizeof|static|struct|switch|typedef|union|unsigned|void|volatile|while)$");
-	regex operadores("^(\\+|\\-|%|\\*|\\/|=)$");
-	regex especiales("^(\\{|\\}|\\[|\\]|&&|\\|\\||\\;|\\,|\\.|\"\"|\" |\'|\'\'|<|>|<<|>>|\\^|<=|>=|==|\\||&)$");
+	regex operadores("^(\\+|\\-|%|\\*|\\/|=|\\*=|\\/=|\\+=|\\-=|%=|<=|>=|&=|\\^=|\\|=|==|<|>|<<|>>)$");
+	regex especiales("^(\\{|\\}|\\[|\\]|&&|\\|\\||\\;|\\,|\\.|\"\"|\" |\'|\'\'|\\||&|%|\\$)$");
 	regex enteros("^\\d+$");
 
 	cout << "\t  A N A L I Z A D O R  L E X I C O" << endl << endl;
